@@ -3,16 +3,16 @@ package operators;
 public class MethodExample {
 	public static void main(String[] args) {
 		int result = sum(10, 20);
-		System.out.println("°á°ú: " + result);
-		// ÇÏ³ª·Î ÇÕÄ¡¸é sysout("°á°ú: " + sum(10, 20)); -> sysout¿¡ ÀÌ¹Ì resultÇÏ¿© Ãâ·ÂÇÑ´Ù´Â ¶æÀ» ´ã°í ÀÖ¾î¼­
-		// ±»ÀÌ result ÇÊ¿äx
-		result = minus(30, 20); // minus = Â÷ÀÌ
-		System.out.println("°á°ú: " + (30 - 20)); // ÀÌ·¸°Ô ¹Ù·Î ¿¬»êÀÚ »ç¿ëÇØ¼­µµ °¡´É
-		result = multi(15, 13); // multi = °ö
-		result = divide(30, 12); // divide = ³ª´« ¸ò
-		// result = 30, 20ÀÇ Â÷ÀÌ¸¦ °è»êÇÏ´Â minus()
-		// result = 15, 13ÀÇ °öÀ» °è»êÇÏ´Â multi()
-		// result = 30, 12ÀÇ ³ª´« ¸òÀ» °è»êÇÏ´Â divide()
+		System.out.println("ê²°ê³¼: " + result);
+		// í•˜ë‚˜ë¡œ í•©ì¹˜ë©´ sysout("ê²°ê³¼: " + sum(10, 20)); -> sysoutì— ì´ë¯¸ resultí•˜ì—¬ ì¶œë ¥í•œë‹¤ëŠ” ëœ»ì„ ë‹´ê³  ìˆì–´ì„œ
+		// êµ³ì´ result í•„ìš”x
+		result = minus(30, 20); // minus = ì°¨ì´
+		System.out.println("ê²°ê³¼: " + (30 - 20)); // ì´ë ‡ê²Œ ë°”ë¡œ ì—°ì‚°ì ì‚¬ìš©í•´ì„œë„ ê°€ëŠ¥
+		result = multi(15, 13); // multi = ê³±
+		result = divide(30, 12); // divide = ë‚˜ëˆˆ ëª«
+		// result = 30, 20ì˜ ì°¨ì´ë¥¼ ê³„ì‚°í•˜ëŠ” minus()
+		// result = 15, 13ì˜ ê³±ì„ ê³„ì‚°í•˜ëŠ” multi()
+		// result = 30, 12ì˜ ë‚˜ëˆˆ ëª«ì„ ê³„ì‚°í•˜ëŠ” divide()
 		printAge(25);
 
 		int n1 = 10;
@@ -27,13 +27,13 @@ public class MethodExample {
 		System.out.println(str1 == str2);
 		System.out.println(str1 == str3);
 
-		System.out.println(str1.equals(str2)); //¹®ÀÚ¿­ ºñ±³
+		System.out.println(str1.equals(str2)); //ë¬¸ìì—´ ë¹„êµ
 		System.out.println(str1.equals(str3));
 		
 	}
 
 	public static void printAge(int age) {
-		System.out.println("³ªÀÌ´Â: " + age + "ÀÔ´Ï´Ù.");
+		System.out.println("ë‚˜ì´ëŠ”: " + age + "ì…ë‹ˆë‹¤.");
 	}
 
 	public static int sum(int a, int b) {

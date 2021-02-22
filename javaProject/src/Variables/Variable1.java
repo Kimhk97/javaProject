@@ -12,7 +12,7 @@ public class Variable1 {
 		
 		int result3 = i1 + 10000;
 		long result4 = l1 + 25000;
-		System.out.println("°á°ú°ªÀº : " + result4);
+		System.out.println("ê²°ê³¼ê°’ì€ : " + result4);
 
 	}
 

@@ -3,15 +3,15 @@ package Variables;
 public class MorningCode {
 	public static void main(String[] args) {
 		int n1 = 30;
-		int n2 = 25; //³» ³ªÀÌ
+		int n2 = 25; //ë‚´ ë‚˜ì´
 		if(n1 < n2) {
-			System.out.println("³ªÀÌ°¡ Á» µé¾ú½À´Ï´Ù.");
+			System.out.println("ë‚˜ì´ê°€ ì¢€ ë“¤ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		else if(n1 == n2) {
-			System.out.println("ÀûÁ¤ÇÑ ³ªÀÌÀÔ´Ï´Ù.");
+			System.out.println("ì ì •í•œ ë‚˜ì´ì…ë‹ˆë‹¤.");
 		}
 		else {
-			System.out.println("ÇÑÃ¢ÀÌ³×¿ä.");
+			System.out.println("í•œì°½ì´ë„¤ìš”.");
 		
 		}
 	}

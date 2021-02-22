@@ -5,7 +5,7 @@ public class GetAverageValue {
 		int i1 = 17;
 		int i2 = 18;
 		double average = (double) (i1 + i2);
-		System.out.println("µÎ ¼öÀÇ Æò±ÕÀº: " + (average/2) + " ÀÔ´Ï´Ù.");
+		System.out.println("ë‘ ìˆ˜ì˜ í‰ê· ì€: " + (average/2) + " ì…ë‹ˆë‹¤.");
 		
 	
 	}
