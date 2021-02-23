@@ -6,7 +6,7 @@ public class CharExample {
 		char c2 = 65;
 		char c3 = '\u0041';
 		
-		char c4 = "가";
+		char c4 = "가"; //한글 어떻게 넣어요
 		char c5 = 44032;
 		char c6 = '\uac00';
 		
