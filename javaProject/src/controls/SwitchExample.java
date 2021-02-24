@@ -4,7 +4,7 @@ public class SwitchExample {
 	public static void main(String[] args) {
 		for (int i = 0; i < 10; i++) {
 //			int z = (int) (Math.random() * 10) + 1;
-//			System.out.println(z); // 0~5 사이의 임의의 수 실행
+//			System.out.println(z); // 0~10 사이의 임의의 수 실행
 		}
 		String msg = "짝수/홀수";
 		int z = (int) (Math.random() * 10) + 1;

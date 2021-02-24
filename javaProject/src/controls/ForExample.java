@@ -11,6 +11,5 @@ public class ForExample { // 1~10까지의 합계
 			}
 			System.out.println("1~10까지의 합계: " + sum);
 		}
-
 	}
 }
