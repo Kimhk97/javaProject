@@ -16,7 +16,7 @@ public class Exercise09 {
 			System.out.println("선택> ");
 
 			int selectNo = scanner.nextInt(); // 값을 입력하도록 하는 메소드
-			if(selectNo !=5 && scores == null) {
+			if(selectNo !=1 && scores == null) {
 				System.out.println("학생수를 입력하세요.");
 				System.out.println();
 				continue;
@@ -28,7 +28,7 @@ public class Exercise09 {
 				scores = new int[studentNum];
 			} else if (selectNo == 2) {
 				for(int i=0; i<scores.length; i++) {
-					System.out.println("scores[" + i + "]> }");
+					System.out.println("scores[" + i + "]> ");
 					scores[i] = scanner.nextInt();
 				}
 //				System.out.print("scores[0]> ");
