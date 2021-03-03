@@ -8,7 +8,7 @@ public class Student { //class 이름의 첫 글자는 대문자로
 	int eng;
 	
 	//생성자: 필드값을 초기화할 때 사용.
-	Student() { //instance?
+	public Student() { //instance?
 		System.out.println("생성자를 호출합니다.");
 	}
 	
@@ -22,10 +22,10 @@ public class Student { //class 이름의 첫 글자는 대문자로
 	}
 	
 	//기능(메소드)
-	void study() {
+	public void study() {
 		System.out.println("공부합니다.");
 	}
-	void run() {
+	public void run() {
 		System.out.println("운동합니다.");
 	}	
 	void introduce() {
