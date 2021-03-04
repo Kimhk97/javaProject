@@ -10,7 +10,7 @@ public class LibraryApplication {
 
 		String title, author, press;
 		int price;
-		
+
 //		static getBookInfo() {
 //			for(int i=0; i < bookList.length; i++) {
 //				if (bookList != null) {
@@ -39,26 +39,35 @@ public class LibraryApplication {
 					press = scn.next();
 					System.out.println("가격> ");
 					price = scn.nextInt();
-					
+
 					bookList = new Book[i];
 				}
-				
-
 			} else if (menu == 2) {
 				System.out.println("2. 회원정보등록");
 				System.out.println("이름> ");
 				String name = scn.next();
 				System.out.println("아이디> ");
 				String id = scn.next();
-				
+
 				user = new Member(name, id);
+			} else if (menu == 3) {
+
 			}
-			
+
 			else if (menu == 5) {
 				System.out.println("도서목록> ");
-				getBookInfo();
+//				getBookInfo();
 			}
 		}
+		
+//		public void rent(Book book) {
+//			for (int i = 0; i <LibraryApplication.bookList.length; i++) {
+//				if (bookList[i] == null) {
+//					bookList[i] = book;
+//				}
+//			}
+//		}
+		
 	}
 
 }
