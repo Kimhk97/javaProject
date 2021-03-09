@@ -1,11 +1,14 @@
 package controls;
 
+import java.util.Scanner;
+
 public class Exercise07 { //책 그대로 입력
 	public static void main(String[] args) {
 		boolean run = true;
 		int balance = 0;
+		Scanner scn = new Scanner(System.in);
 		scn.nextInt(); //숫자값을 읽어온다
-		Scanner scanner = new Scanner(system.in);
+		
 		
 		while(run) {
 			System.out.println("--------------------------------");
