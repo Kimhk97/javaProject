@@ -1,6 +1,6 @@
 package hr;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 	private int employeeId;
 	private String firstName;
 	private String lastName;
@@ -8,7 +8,7 @@ public class Employee {
 	private String phoneNumber;
 	private String hireDate;
 	private String jobId;
-	private double Salary;
+	private int Salary;
 
 	public int getEmployeeId() {
 		return employeeId;
@@ -70,7 +70,7 @@ public class Employee {
 		return Salary;
 	}
 
-	public void setSalary(double salary) {
+	public void setSalary(int salary) {
 		Salary = salary;
 	}
 
@@ -79,6 +79,11 @@ public class Employee {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
 				+ email + ", phoneNumber=" + phoneNumber + ", hireDate=" + hireDate + ", jobId=" + jobId + ", Salary="
 				+ Salary + "]";
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+		return o.firstName.compareTo(this.firstName); //-1 오름차순. +1 내림차순.
 	}
 
 }

@@ -1,27 +1,51 @@
 package hr;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 public class EmpDAO {
 	Connection conn = null;
-	ResultSet rs = null;
-	PreparedStatement psmt = null;
-	String sql = "select * from dept_java";
+//	ResultSet rs = null;
+//	PreparedStatement psmt = null;
+//	String sql = "select * from dept_java";
+//
+//	EmpDAO() {
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String user = "hr";
+//		String passwd = "hr";
+//		conn = DBUtil.getConnection(url, user, passwd);
 
-	EmpDAO() {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String user = "hr";
-		String passwd = "hr";
-		conn = DBUtil.getConnection(url, user, passwd);
-	}
+//		String path = "config/database.properties";
+//		FileReader fr = null;
+//		Properties prop = new Properties();
+//
+//		try {
+//			fr = new FileReader(path);
+//			prop.load(fr);
+//		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		String url = prop.getProperty("url");
+//		String user = prop.getProperty("user");
+//		String passwd = prop.getProperty("pass");
+//		conn = DBUtil.getConnection(url, user, passwd);
+//	}
 
 //	public Department[] deptList() {
 //
@@ -48,13 +72,14 @@ public class EmpDAO {
 //		System.out.println("메소드 호출 완료.");
 //		return departments;
 //	}
-	
-	//컬렉션 Set
+
+	// 컬렉션 Set
 	public Set<Employee> getEmps() {
 		String sql = "select * from emp_java";
-		Set<Employee> list = new HashSet<>();
+		Set<Employee> set = new HashSet<>();
 		Statement stmt = null;
 		ResultSet rs = null;
+		
 		try {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
@@ -64,18 +89,17 @@ public class EmpDAO {
 				emp.setFirstName(rs.getString("first_name"));
 				emp.setLastName(rs.getString("last_name"));
 				emp.setSalary(rs.getInt("salary"));
-				list.add(emp);
+				set.add(emp);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBUtil.close(rs, stmt, conn);
 		}
-		return list;
+		return set;
 	}
-	
-	
-	//컬렉션 List
+
+	// 컬렉션 List
 	public List<Employee> getEmpList() {
 		String sql = "select * from emp_java";
 		List<Employee> list = new ArrayList<>();
@@ -99,8 +123,8 @@ public class EmpDAO {
 		}
 		return list;
 	}
-	
-	//다른 방식
+
+	// 다른 방식
 	public Employee[] empList() {
 
 		PreparedStatement psmt = null;
@@ -121,7 +145,7 @@ public class EmpDAO {
 				emp.setJobId(rs.getString("job_id"));
 				emp.setLastName(rs.getString("last_name"));
 				emp.setPhoneNumber(rs.getString("phone_number"));
-				emp.setSalary(rs.getDouble("salary"));
+				emp.setSalary(rs.getInt("salary"));
 //				System.out.println(emp.toString());
 				employees[i++] = emp;
 			}
@@ -132,6 +156,25 @@ public class EmpDAO {
 		}
 		System.out.println("메소드 호출 완료.");
 		return employees;
+	}
+
+	public Map<String, String> getJobList() {
+		String sql = "select * from jobs";
+		Statement stmt = null;
+		ResultSet rs = null;
+		Map<String, String> map = new HashMap<String, String>();
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				map.put(rs.getString("job_id"), rs.getString("job_title"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(rs, stmt, conn);
+		}
+		return map;
 	}
 
 }

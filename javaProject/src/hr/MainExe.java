@@ -3,21 +3,41 @@ package hr;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class MainExe {
 	public static void main(String[] args) {
 		EmpDAO dao = new EmpDAO();
-//		Employee[] empList = dao.empList();
-//		List<Employee> empList = dao.getEmpList(); //List
-		Set<Employee> empList = dao.getEmps(); // Set
-		System.out.println("Salary가 5000 이상인 사원정보");
-		for (Employee emp : empList) {
-			if (emp != null && emp.getSalary() > 5000) {
-				System.out.println(emp.toString());
-			}
+
+		Map<String, String> map = dao.getJobList();
+		Set<String> set = map.keySet();
+		Iterator<String> iter = set.iterator();
+		while(iter.hasNext()) {
+			String jobId = iter.next();
+			String jobTitle = map.get(jobId);
+			System.out.println("jobId: " + jobId + ", jobTitle:" + jobTitle);
 		}
+		
+//		Set<Entry<String, String>> set = map.entrySet();
+//		Iterator<Entry<String, String>> iter = set.iterator();
+//		while (iter.hasNext()) {
+//			Entry<String, String> ent = iter.next();
+//			System.out.println("jobId: " + ent.getKey() + ", jobTtile: " + ent.getValue());
+//		}
+
+////		Employee[] empList = dao.empList();
+////		List<Employee> empList = dao.getEmpList(); //List
+//		Set<Employee> empList = dao.getEmps(); // Set
+//		System.out.println("Salary가 5000 이상인 사원정보");
+//		for (Employee emp : empList) {
+//			if (emp != null && emp.getSalary() > 5000) {
+//				System.out.println(emp.toString());
+//			}
+//		}
 
 //		public static void sort(int[] iary) {
 //			Arrays.sort(iary);
