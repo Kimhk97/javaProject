@@ -7,5 +7,8 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Dev/ojdbc6_g.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/javax.mail-api-1.6.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/admin/Desktop/activation-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
