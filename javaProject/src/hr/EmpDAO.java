@@ -22,30 +22,30 @@ public class EmpDAO {
 //	PreparedStatement psmt = null;
 //	String sql = "select * from dept_java";
 //
-//	EmpDAO() {
+	public EmpDAO() {
 //		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 //		String user = "hr";
 //		String passwd = "hr";
 //		conn = DBUtil.getConnection(url, user, passwd);
 
-//		String path = "config/database.properties";
-//		FileReader fr = null;
-//		Properties prop = new Properties();
-//
-//		try {
-//			fr = new FileReader(path);
-//			prop.load(fr);
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		String url = prop.getProperty("url");
-//		String user = prop.getProperty("user");
-//		String passwd = prop.getProperty("pass");
-//		conn = DBUtil.getConnection(url, user, passwd);
-//	}
+		String path = "config/database.properties";
+		FileReader fr = null;
+		Properties prop = new Properties();
+
+		try {
+			fr = new FileReader(path);
+			prop.load(fr);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		String url = prop.getProperty("url");
+		String user = prop.getProperty("user");
+		String passwd = prop.getProperty("pass");
+		conn = DBUtil.getConnection(url, user, passwd);
+	}
 
 //	public Department[] deptList() {
 //
@@ -89,6 +89,7 @@ public class EmpDAO {
 				emp.setFirstName(rs.getString("first_name"));
 				emp.setLastName(rs.getString("last_name"));
 				emp.setSalary(rs.getInt("salary"));
+				emp.setJobId(rs.getString("job_id"));
 				set.add(emp);
 			}
 		} catch (SQLException e) {
