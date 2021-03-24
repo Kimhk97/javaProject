@@ -1,4 +1,4 @@
-package myapp;
+package myapp.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,14 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class FxmlApp extends Application {
+public class AppMain extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		Parent root = FXMLLoader.load(getClass().getResource("inputPackage/Root.fxml")); //getClass : 상대경로 불러옴
-		
-		
+		Parent root = FXMLLoader.load(getClass().getResource("Root.fxml")); //getClass : 상대경로 불러옴
+				
 		//컨테이너를 Scene의 매개값으로
 		Scene scene = new Scene(root);
 		
